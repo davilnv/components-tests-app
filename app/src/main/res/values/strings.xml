@@ -9,4 +9,7 @@
     <string name="check_red">Vermelho</string>
     <string name="check_black">Preto</string>
     <string name="check_branco">Branco</string>
+    <string name="label_gender">Sexo</string>
+    <string name="radio_male">Masculino</string>
+    <string name="radio_female">Feminino</string>
 </resources>
