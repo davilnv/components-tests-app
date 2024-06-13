@@ -5,4 +5,8 @@
     <string name="label_button">Enviar</string>
     <string name="label_result">Resultado</string>
     <string name="label_button_clear">Limpar</string>
+    <string name="label_colors">Cores</string>
+    <string name="check_red">Vermelho</string>
+    <string name="check_black">Preto</string>
+    <string name="check_branco">Branco</string>
 </resources>
