@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AppComponents</string>
+    <string name="label_name">Digite seu nome</string>
+    <string name="label_email">Digite seu e-mail</string>
+    <string name="label_button">Enviar</string>
+    <string name="label_result">Resultado</string>
+    <string name="label_button_clear">Limpar</string>
+</resources>
