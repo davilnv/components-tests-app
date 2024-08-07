@@ -3,11 +3,15 @@ package br.com.texsistemas.appcomponents;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -15,10 +19,12 @@ public class MainActivity extends AppCompatActivity {
 
     private TextInputEditText editTextName;
     private TextInputEditText editTextEmail;
-    private TextView textResult;
+    private TextView textResult, textViewPassResult;
     private CheckBox checkRed, checkBlack, checkWhite;
     private RadioGroup radioGroup;
     private RadioButton radioM, radioF;
+    private ToggleButton toggleButtonPass;
+    private SwitchCompat switchButtonPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +43,28 @@ public class MainActivity extends AppCompatActivity {
         radioM = findViewById(R.id.radioM);
         radioF = findViewById(R.id.radioF);
 
+        toggleButtonPass = findViewById(R.id.toggleButtonPass);
+        switchButtonPass = findViewById(R.id.switchButtonPass);
+        textViewPassResult = findViewById(R.id.textViewPassResult);
+
+        // Antes era utilizado o new com a interface, da seguinte forma :
+        /*
+        * switchButtonPass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                switchButton();
+            }
+        });
+        * */
+        // Atualmente é possível utilizar lambda dependendo da versão do java utilizado.
+        switchButtonPass.setOnCheckedChangeListener((compoundButton, b) -> switchButton());
+
         radioButton();
     }
 
     public void send(View view) {
 
-        radioButton();
+        switchButton();
 
     }
 
@@ -59,6 +81,32 @@ public class MainActivity extends AppCompatActivity {
         }
 
          */
+
+    }
+
+    public void switchButton() {
+        if (switchButtonPass.isChecked()) {
+            textViewPassResult.setText("Toggle ligado!");
+        } else {
+            textViewPassResult.setText("Está desligado");
+        }
+    }
+
+    public void showToast(View view) {
+        //Toast.makeText(getApplicationContext(), "Teste de exibição de TOAST!", Toast.LENGTH_LONG).show();
+
+        // Criando um Toast personalizado
+
+        ImageView image = new ImageView(getApplicationContext());
+        image.setImageResource(android.R.drawable.star_big_off);
+
+        TextView textView = new TextView(getApplicationContext());
+        textView.setText("Olá, teste TOAST!");
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(image); // Aqui pode ser view de diferentes formas, se quiser exibir algo personalizado.
+        toast.show();
 
     }
 

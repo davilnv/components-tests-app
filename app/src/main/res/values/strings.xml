@@ -12,4 +12,11 @@
     <string name="label_gender">Sexo</string>
     <string name="radio_male">Masculino</string>
     <string name="radio_female">Feminino</string>
+    <string name="label_switch_pass">Lembrar senha</string>
+    <string name="label_switch_off">DESLIGADO</string>
+    <string name="label_switch_on">LIGADO</string>
+    <string name="label_toggle_off">DESLIGADO</string>
+    <string name="label_toggle_on">LIGADO</string>
+    <string name="label_pass_result">Resultado Senha</string>
+    <string name="label_button_show_toast">Abrir Toast</string>
 </resources>
