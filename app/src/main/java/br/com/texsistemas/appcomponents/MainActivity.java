@@ -1,5 +1,6 @@
 package br.com.texsistemas.appcomponents;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -107,6 +109,41 @@ public class MainActivity extends AppCompatActivity {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(image); // Aqui pode ser view de diferentes formas, se quiser exibir algo personalizado.
         toast.show();
+
+    }
+
+    public void showAlertDialog(View view) {
+
+        // Recebe um context , mas o contexto da Acitity
+        // Utiliza a classe Builder para instanciar o alert
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setTitle("Título do diálogo");
+        dialog.setMessage("Mensagem do diálogo!");
+
+        // Configurar o cancelamento - Obriga o uso da ação positiva ou negativa
+        dialog.setCancelable(false);
+
+        // Configurar um icone
+        dialog.setIcon(android.R.drawable.ic_btn_speak_now);
+
+        // Métodos de resposta, positiva e negativa
+        dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(getApplicationContext(), "Confirmado a ação!", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(getApplicationContext(), "Negado a ação!", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        // Cria e exibe o dialog
+        dialog.create();
+        dialog.show();
 
     }
 

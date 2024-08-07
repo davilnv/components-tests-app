@@ -1,134 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="20dp"
     tools:context=".MainActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/label_name" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/label_email"
-            android:inputType="text|textEmailAddress" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textViewColors"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/label_colors" />
+        android:orientation="vertical">
 
-    <CheckBox
-        android:id="@+id/checkRed"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/check_red" />
-
-    <CheckBox
-        android:id="@+id/checkBlack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/check_black" />
-
-    <CheckBox
-        android:id="@+id/checkWhite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/check_branco" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/label_gender" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/radioM"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/radio_male" />
+            android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/radioF"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/radio_female" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_name" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switchButtonPass"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/label_switch_pass"
-            android:textOff="@string/label_switch_off"
-            android:textOn="@string/label_switch_on"
-            android:textSize="16sp" />
+            android:layout_height="wrap_content">
 
-        <ToggleButton
-            android:id="@+id/toggleButtonPass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ToggleButton"
-            android:textOff="@string/label_toggle_off"
-            android:textOn="@string/label_toggle_on"
-            tools:ignore="HardcodedText" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_email"
+                android:inputType="text|textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/textViewPassResult"
+            android:id="@+id/textViewColors"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_pass_result" />
-    </RadioGroup>
+            android:text="@string/label_colors" />
 
-    <Button
-        android:id="@+id/buttonSend"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="send"
-        android:text="@string/label_button" />
+        <CheckBox
+            android:id="@+id/checkRed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/check_red" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="clearFields"
-        android:text="@string/label_button_clear" />
+        <CheckBox
+            android:id="@+id/checkBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/check_black" />
 
-    <Button
-        android:id="@+id/buttonShowToast"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showToast"
-        android:text="@string/label_button_show_toast" />
+        <CheckBox
+            android:id="@+id/checkWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/check_branco" />
 
-    <TextView
-        android:id="@+id/textResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/label_result" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_gender" />
 
-</LinearLayout>
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_male" />
+
+            <RadioButton
+                android:id="@+id/radioF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_female" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchButtonPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_switch_pass"
+                android:textOff="@string/label_switch_off"
+                android:textOn="@string/label_switch_on"
+                android:textSize="16sp" />
+
+            <ToggleButton
+                android:id="@+id/toggleButtonPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOff="@string/label_toggle_off"
+                android:textOn="@string/label_toggle_on"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textViewPassResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_pass_result" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/buttonSend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="send"
+            android:text="@string/label_button" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="clearFields"
+            android:text="@string/label_button_clear" />
+
+        <Button
+            android:id="@+id/buttonShowToast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showToast"
+            android:text="@string/label_button_show_toast" />
+
+        <Button
+            android:id="@+id/buttonShowAlertDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showAlertDialog"
+            android:text="@string/label_button_alert_dialog" />
+
+        <TextView
+            android:id="@+id/textResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_result" />
+
+    </LinearLayout>
+</ScrollView>
