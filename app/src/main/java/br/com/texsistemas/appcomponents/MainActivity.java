@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton radioM, radioF;
     private ToggleButton toggleButtonPass;
     private SwitchCompat switchButtonPass;
+    private ProgressBar progressBarHorizontal, progressBaCircular;
+    private int progress = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
         switchButtonPass = findViewById(R.id.switchButtonPass);
         textViewPassResult = findViewById(R.id.textViewPassResult);
 
+        progressBarHorizontal = findViewById(R.id.progressBarHorizontal);
+        progressBaCircular = findViewById(R.id.progressBaCircular);
+        progressBaCircular.setVisibility(View.GONE);
+
         // Antes era utilizado o new com a interface, da seguinte forma :
         /*
         * switchButtonPass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -68,6 +75,16 @@ public class MainActivity extends AppCompatActivity {
 
         switchButton();
 
+    }
+
+    public void loadProgressBar(View view) {
+        progress += 1;
+        progressBarHorizontal.setProgress(progress);
+
+        progressBaCircular.setVisibility(View.VISIBLE);
+
+        if (progress == 10)
+            progressBaCircular.setVisibility(View.GONE);
     }
 
     public void radioButton() {

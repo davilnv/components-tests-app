@@ -20,4 +20,5 @@
     <string name="label_pass_result">Resultado Senha</string>
     <string name="label_button_show_toast">Abrir Toast</string>
     <string name="label_button_alert_dialog">Abrir Alert Dialog</string>
+    <string name="label_button_load_progressbar">Carregar</string>
 </resources>
