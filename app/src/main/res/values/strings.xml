@@ -21,4 +21,7 @@
     <string name="label_button_show_toast">Abrir Toast</string>
     <string name="label_button_alert_dialog">Abrir Alert Dialog</string>
     <string name="label_button_load_progressbar">Carregar</string>
+    <string name="label_how_much_funny_are_you">O quão divertido você é?</string>
+    <string name="label_value_scale_0_to_10">em uma escala de 0 até 10</string>
+    <string name="label_button_recover_progress">Recuperar Progresso</string>
 </resources>

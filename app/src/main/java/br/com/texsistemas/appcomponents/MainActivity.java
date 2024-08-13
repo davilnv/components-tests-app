@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -18,17 +19,20 @@ import androidx.appcompat.widget.SwitchCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.MessageFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextInputEditText editTextName;
     private TextInputEditText editTextEmail;
-    private TextView textResult, textViewPassResult;
+    private TextView textResult, textViewPassResult, textViewResultSeekBar;
     private CheckBox checkRed, checkBlack, checkWhite;
     private RadioGroup radioGroup;
     private RadioButton radioM, radioF;
     private ToggleButton toggleButtonPass;
     private SwitchCompat switchButtonPass;
     private ProgressBar progressBarHorizontal, progressBaCircular;
+    private SeekBar seekBarScale;
     private int progress = 0;
 
     @Override
@@ -56,6 +60,26 @@ public class MainActivity extends AppCompatActivity {
         progressBaCircular = findViewById(R.id.progressBaCircular);
         progressBaCircular.setVisibility(View.GONE);
 
+        seekBarScale = findViewById(R.id.seekBarScale);
+        textViewResultSeekBar = findViewById(R.id.textViewResultSeekBar);
+
+        seekBarScale.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+                textViewResultSeekBar.setText(MessageFormat.format("Progresso: {0} / {1}", progress, seekBarScale.getMax()));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
         // Antes era utilizado o new com a interface, da seguinte forma :
         /*
         * switchButtonPass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -75,6 +99,10 @@ public class MainActivity extends AppCompatActivity {
 
         switchButton();
 
+    }
+
+    public void recoverProgress(View view) {
+        textViewResultSeekBar.setText(MessageFormat.format("Escolhido: {0}", seekBarScale.getProgress()));
     }
 
     public void loadProgressBar(View view) {
