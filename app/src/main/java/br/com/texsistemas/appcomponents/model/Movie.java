@@ -1,5 +1,7 @@
 package br.com.texsistemas.appcomponents.model;
 
+import androidx.annotation.NonNull;
+
 public class Movie {
     private String title;
     private String genre;
@@ -36,5 +38,11 @@ public class Movie {
 
     public void setYear(String year) {
         this.year = year;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return title + ", " + year;
     }
 }

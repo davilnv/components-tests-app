@@ -1,7 +1,10 @@
 package br.com.texsistemas.appcomponents.activity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -13,6 +16,7 @@ import java.util.List;
 
 import br.com.texsistemas.appcomponents.R;
 import br.com.texsistemas.appcomponents.adapter.BaseAdapter;
+import br.com.texsistemas.appcomponents.listener.RecyclerItemClickListener;
 import br.com.texsistemas.appcomponents.model.Movie;
 
 public class RecyclerViewActivity extends AppCompatActivity {
@@ -40,6 +44,39 @@ public class RecyclerViewActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
         recyclerView.setAdapter(adapter);
 
+        // Evento de clique
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(
+                        getApplicationContext(),
+                        recyclerView,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                Movie movie = movieList.get(position);
+                                Toast.makeText(
+                                        getApplicationContext(),
+                                        "Item pressionado: " + movie,
+                                        Toast.LENGTH_SHORT
+                                ).show();
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+                                Movie movie = movieList.get(position);
+                                Toast.makeText(
+                                        getApplicationContext(),
+                                        "Click longo: " + movie,
+                                        Toast.LENGTH_LONG
+                                ).show();
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            }
+                        }
+                )
+        );
+
     }
 
     public void loadMovies() {
@@ -54,5 +91,4 @@ public class RecyclerViewActivity extends AppCompatActivity {
         movieList.add(new Movie("The Lord of the Rings: The Return of the King", "Fantasy", "2003"));
         movieList.add(new Movie("Titanic", "Romance", "1997"));
     }
-
 }
