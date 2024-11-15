@@ -24,4 +24,7 @@
     <string name="label_how_much_funny_are_you">O quão divertido você é?</string>
     <string name="label_value_scale_0_to_10">em uma escala de 0 até 10</string>
     <string name="label_button_recover_progress">Recuperar Progresso</string>
+    <string name="label_title">Título</string>
+    <string name="label_year">Ano</string>
+    <string name="label_genre">Gênero</string>
 </resources>

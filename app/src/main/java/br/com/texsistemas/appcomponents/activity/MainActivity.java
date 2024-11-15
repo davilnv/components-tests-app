@@ -1,4 +1,4 @@
-package br.com.texsistemas.appcomponents;
+package br.com.texsistemas.appcomponents.activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -20,6 +20,8 @@ import androidx.appcompat.widget.SwitchCompat;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.MessageFormat;
+
+import br.com.texsistemas.appcomponents.R;
 
 public class MainActivity extends AppCompatActivity {
 

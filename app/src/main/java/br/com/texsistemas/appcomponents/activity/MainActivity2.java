@@ -1,4 +1,4 @@
-package br.com.texsistemas.appcomponents;
+package br.com.texsistemas.appcomponents.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +8,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import br.com.texsistemas.appcomponents.R;
 
 public class MainActivity2 extends AppCompatActivity {
 
